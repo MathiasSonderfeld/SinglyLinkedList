@@ -1,11 +1,11 @@
 import java.util.*;
 
 public class SinglyLinkedList<Generic extends Comparable> implements List<Generic>{
-    private SinglyLinkedNode<Generic> start = null;
-    private SinglyLinkedNode<Generic> end = null;
-    private int size = 0;
+    protected SinglyLinkedNode<Generic> start = null;
+    protected SinglyLinkedNode<Generic> end = null;
+    protected int size = 0;
 
-    private SinglyLinkedNode<Generic> getNodeAtIndex(int index){
+    protected SinglyLinkedNode<Generic> getNodeAtIndex(int index){
         if(index >= size){
             throw new IndexOutOfBoundsException();
         }
@@ -85,7 +85,7 @@ public class SinglyLinkedList<Generic extends Comparable> implements List<Generi
 
     @Override
     public Iterator<Generic> iterator(){
-        return null;
+        return new SinglyLinkedListIterator<Generic>(start);
     }
 
     @Override
@@ -217,17 +217,108 @@ public class SinglyLinkedList<Generic extends Comparable> implements List<Generi
 
     @Override
     public ListIterator<Generic> listIterator(){
-        return null;
+        return new SllListIterator<Generic>(this);
     }
 
     @Override
     public ListIterator<Generic> listIterator(int index){
-        return null;
+        return new SllListIterator<Generic>(this, index);
     }
 
     @Override
     public List<Generic> subList(int fromIndex, int toIndex){
-        return null;
+        SinglyLinkedList<Generic> sublist = new SinglyLinkedList<>();
+        SinglyLinkedNode<Generic> iterator = getNodeAtIndex(fromIndex);
+        for (int i=fromIndex; i<=toIndex; i++){
+            sublist.add(iterator.get());
+            iterator = iterator.getAfter();
+        }
+        return  sublist;
+    }
+}
+
+class SinglyLinkedListIterator<Generic> implements Iterator{
+    SinglyLinkedNode<Generic> node;
+
+    SinglyLinkedListIterator(SinglyLinkedNode<Generic> start){
+        this.node = start;
+    }
+
+    @Override
+    public boolean hasNext(){
+        return node.getAfter() != null;
+    }
+
+    @Override
+    public Generic next(){
+        node = node.getAfter();
+        return node.get();
+    }
+}
+
+class SllListIterator<Generic extends Comparable> implements ListIterator{
+    private SinglyLinkedList<Generic> list;
+    private int index = 0;
+    private SinglyLinkedNode<Generic> iteratorNode;
+
+    SllListIterator(SinglyLinkedList<Generic> list){
+        this.list = list;
+        this.iteratorNode = this.list.start;
+    }
+
+    SllListIterator(SinglyLinkedList<Generic> list, int index){
+        this.list = list;
+        this.index = index;
+        this.iteratorNode = this.list.getNodeAtIndex(index);
+    }
+
+    @Override
+    public boolean hasNext(){
+        return iteratorNode.getAfter() != null;
+    }
+
+    @Override
+    public Generic next(){
+        index++;
+        iteratorNode = iteratorNode.getAfter();
+        return iteratorNode.get();
+    }
+
+    @Override
+    public boolean hasPrevious(){
+        return index>0;
+    }
+
+    @Override
+    public Generic previous(){
+        if (index == 0) return null;
+        iteratorNode = list.getNodeAtIndex(--index);
+        return iteratorNode.get();
+    }
+
+    @Override
+    public int nextIndex(){
+        return index+1;
+    }
+
+    @Override
+    public int previousIndex(){
+        return index-1;
+    }
+
+    @Override
+    public void remove(){
+        this.list.remove(index);
+    }
+
+    @Override
+    public void set(Object o){
+        this.iteratorNode.set( (Generic) o);
+    }
+
+    @Override
+    public void add(Object o){
+        this.list.add(index+1, (Generic) o);
     }
 }
 
