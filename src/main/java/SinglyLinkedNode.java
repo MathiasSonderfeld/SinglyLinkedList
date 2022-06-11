@@ -11,16 +11,20 @@ public class SinglyLinkedNode<Generic>{
         this.content=content;
     }
 
-    public SinglyLinkedNode getAfter(){
+    public SinglyLinkedNode<Generic> getAfter(){
         return after;
     }
 
-    public void setAfter(SinglyLinkedNode node){
+    public void setAfter(SinglyLinkedNode<Generic> node){
         this.after = node;
     }
 
     public Generic get(){
         return content;
+    }
+
+    public void set(Generic content){
+        this.content = content;
     }
 
 }
