@@ -209,12 +209,17 @@ public class SinglyLinkedList<Generic extends Comparable> implements List<Generi
     @Override
     public Generic remove(int index){
         SinglyLinkedNode<Generic> iterator = getNodeAtIndex(index);
+        size--;
+        if(index == 0){
+            start = iterator.getAfter();
+            return iterator==null? null : iterator.get();
+        }
         SinglyLinkedNode<Generic> toRemove = iterator.getAfter();
         SinglyLinkedNode<Generic> afterRemove = null;
         if(toRemove != null)
             afterRemove = toRemove.getAfter();
         iterator.setAfter(afterRemove);
-        return toRemove.get();
+        return toRemove==null? null : toRemove.get();
     }
 
     /**
@@ -330,6 +335,7 @@ public class SinglyLinkedList<Generic extends Comparable> implements List<Generi
      */
     @Override
     public int indexOf(Object toFind){
+        if(this.size == 0) return -1;
         SinglyLinkedNode<Generic> iterator = start;
         for(int i=0; i < size; i++){
             if(iterator.get().equals(toFind)){
