@@ -246,6 +246,14 @@ public class SingleLinkedListTest{
         Assertions.assertFalse(list.contains("secondEntry"));
         Assertions.assertFalse(list.contains("thirdEntry"));
         Assertions.assertEquals(0, list.size());
+        Assertions.assertTrue(list.add("firstEntry"));
+        Assertions.assertEquals(1,list.size());
+        Assertions.assertTrue(list.add("secondEntry"));
+        Assertions.assertEquals(2,list.size());
+        Assertions.assertTrue(list.add("firstEntry"));
+        Assertions.assertEquals(3,list.size());
+        Assertions.assertTrue(list.add("thirdEntry"));
+        Assertions.assertEquals(4,list.size());
     }
 
     @Test
