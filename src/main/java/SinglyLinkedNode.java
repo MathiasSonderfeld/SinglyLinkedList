@@ -1,4 +1,10 @@
-public class SinglyLinkedNode<Generic>{
+/**
+ * Simple Node class for the SinglyLinkedList
+ * @author Mathias Sonderfeld
+ * @version 0.1-SNAPSHOT
+ * @param <Generic> inherits the datatype from SinglyLinkedList
+ */
+class SinglyLinkedNode<Generic>{
     private SinglyLinkedNode after;
     private Generic content;
 

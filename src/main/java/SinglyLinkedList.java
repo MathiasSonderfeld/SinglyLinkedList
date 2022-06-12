@@ -5,7 +5,7 @@ import java.util.*;
  * A Singly-linked implementation of List-Interface.
  * Note that this implementation is not synchronized.
  * @author Mathias Sonderfeld
- * @version 0.1
+ * @version 0.1-SNAPSHOT
  * @param <Generic> The datatype to be stored in this list
  */
 public class SinglyLinkedList<Generic extends Comparable> implements List<Generic>{

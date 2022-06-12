@@ -6,7 +6,7 @@
 
     <groupId>net.sonderfeld.mathias</groupId>
     <artifactId>SinglyLinkedList</artifactId>
-    <version>0.1</version>
+    <version>0.1-SNAPSHOT</version>
 
     <name>Singly Linked List</name>
     <description>A Singly Linked List if you explicitly need one.</description>
