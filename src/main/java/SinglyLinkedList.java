@@ -322,11 +322,17 @@ public class SinglyLinkedList<Generic extends Comparable> implements List<Generi
         return ret;
     }
 
+    /**
+     * Returns the index of the first occurrence of the specified element in this list,
+     * or -1 if this list does not contain the element.
+     * @param toFind element to search for
+     * @return the index of the first occurrence of the specified element in this list
+     */
     @Override
-    public int indexOf(Object o){
+    public int indexOf(Object toFind){
         SinglyLinkedNode<Generic> iterator = start;
         for(int i=0; i < size; i++){
-            if(iterator.get().equals(o)){
+            if(iterator.get().equals(toFind)){
                 return i;
             }
             iterator = iterator.getAfter();
@@ -335,17 +341,17 @@ public class SinglyLinkedList<Generic extends Comparable> implements List<Generi
     }
 
     /**
-     * Returns the index of the first occurrence of the specified element in this list,
+     * Returns the index of the last occurrence of the specified element in this list,
      * or -1 if this list does not contain the element.
-     * @param o element to search for
-     * @return the index of the first occurrence of -1 if the element is not in this list
+     * @param toFind element to search for
+     * @return the index of the last occurrence of -1 if the element is not in this list
      */
     @Override
-    public int lastIndexOf(Object o){
+    public int lastIndexOf(Object toFind){
         SinglyLinkedNode<Generic> iterator = start;
         int lastIndex = -1;
         for(int i=0; i < size; i++){
-            if(iterator.get().equals(o)){
+            if(iterator.get().equals(toFind)){
                 lastIndex= i;
             }
             iterator = iterator.getAfter();
