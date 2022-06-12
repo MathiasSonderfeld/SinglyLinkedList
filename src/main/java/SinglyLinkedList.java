@@ -5,7 +5,7 @@ import java.util.*;
  * A Singly-linked implementation of List-Interface.
  * Note that this implementation is not synchronized.
  * @author Mathias Sonderfeld
- * @version 0.8
+ * @version 0.8.1
  * @param <Generic> The datatype to be stored in this list
  */
 public class SinglyLinkedList<Generic extends Comparable> implements List<Generic>{
@@ -316,6 +316,7 @@ public class SinglyLinkedList<Generic extends Comparable> implements List<Generi
     @Override
     public void clear(){
         this.start = null;
+        this.end = null;
         this.size = 0;
     }
 
