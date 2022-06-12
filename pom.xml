@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.sonderfeld.mathias</groupId>
-    <artifactId>SinglyLinkedList</artifactId>
+    <groupId>io.github.mathiassonderfeld</groupId>
+    <artifactId>singlylinkedlist</artifactId>
     <version>0.8.1</version>
-
+    <url>https://github.com/MathiasSonderfeld/SinglyLinkedList</url>
     <name>Singly Linked List</name>
     <description>A Singly Linked List if you explicitly need one.</description>
     <developers>
@@ -18,7 +18,7 @@
     </developers>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -33,12 +33,18 @@
         </dependency>
     </dependencies>
 
+    <scm>
+        <connection>scm:git:git@github.com:mathiassonderfeld/singlylinkedlist.git</connection>
+        <url>scm:git:git@github.com:mathiassonderfeld/singlylinkedlist.git</url>
+        <developerConnection>scm:git:git@github.com:mathiassonderfeld/singlylinkedlist.git</developerConnection>
+    </scm>
+
     <distributionManagement>
-        <snapshotRepository>
+        <repository>
             <id>github</id>
             <name>GitHub Mathias Sonderfeld Apache Maven Packages</name>
             <url>https://maven.pkg.github.com/mathiassonderfeld/singlylinkedlist</url>
-        </snapshotRepository>
+        </repository>
     </distributionManagement>
 
 
