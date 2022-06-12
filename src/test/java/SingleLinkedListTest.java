@@ -16,7 +16,7 @@ public class SingleLinkedListTest{
 
     @Nested
     class postAddTests{
-@Test
+        @Test
         public void testAddAllStrings(){
             SinglyLinkedList<String> list = new SinglyLinkedList<>();
             ArrayList<String> src = new ArrayList<>(3);
@@ -93,5 +93,13 @@ public class SingleLinkedListTest{
             Assertions.assertEquals(list.size(),3);
             Assertions.assertTrue(list.containsAll(src));
         }
+    }
+
+    /**
+     * these tests verify that this list behaves as the java util lists.
+     */
+    @Nested
+    class InterfaceTests{
+
     }
 }
