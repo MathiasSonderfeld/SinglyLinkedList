@@ -33,6 +33,15 @@
         </dependency>
     </dependencies>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>github</id>
+            <name>GitHub Mathias Sonderfeld Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/mathiassonderfeld/singlylinkedlist</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <testSourceDirectory>src/test/java</testSourceDirectory>
