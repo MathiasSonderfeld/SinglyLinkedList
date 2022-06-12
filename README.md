@@ -14,4 +14,5 @@ Then you can use it before its available.
 ### Usage
 Use as any other List.
 
+---
 *Because sometimes you want exactly that specific datastructure.*
