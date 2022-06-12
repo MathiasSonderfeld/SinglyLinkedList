@@ -3,8 +3,6 @@ A Singly Linked List for Java projects.
 Implements Java.util.List and uses Java Generics.
 This implementation is not synchronized.
 
-**WORK IN PROGRESS, DO NOT USE FOR PRODUCTION**
-
 ### Integration
 I recommend using Maven for the integration.
 This list will be available there shortly.
