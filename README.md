@@ -5,9 +5,11 @@ This implementation is not synchronized.
 
 ### Integration
 I recommend using Maven for the integration.
-This list will be available on the Maven Central Repository shortly.
-Until then, you can use github as repositry or build a jar with maven and install it in your local repository.
-Alternatively you can download the jar and integrate it as you please.
+This list is available on the Maven Central Repository shortly under groupId io.github.mathiassonderfeld and artifactid singlylinkedlist.
+https://mvnrepository.com/artifact/io.github.mathiassonderfeld/singlylinkedlist
+
+Alternatively you can use github as repositry or build a jar with maven and install it in your local repository.
+Or you can download the jar and integrate it as you please.
 
 ### Usage
 Use as any other List.
